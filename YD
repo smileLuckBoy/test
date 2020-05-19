@@ -1,4 +1,6 @@
-7 基于gitflow来进行分支管理，正常开发中，简单配置的话可由feature、master、release分支组成（可以添加test分支），feature用于开发新特性、master为主分支、release为发布分支，relase分支由feature分支merge而来，merge时触发CI/CD,进行自动化单元测试，持续集成可以通过jenkins实现，可以通过手动触发构建或者通过SCM机制自动化构建，merge到relase同时打tag，并触发部署
+7 基于gitflow来进行分支管理，正常开发中，简单配置的话可由feature、master、release分支组成（可以添加test分支），feature用于开发新特性、master为主
+   分支、release为发布分支，relase分支由feature分支merge而来，merge时触发CI/CD,进行自动化单元测试，持续集成可以通过jenkins实现，可以通过手动触发构建
+   或者通过SCM机制自动化构建，merge到relase同时打tag，并触发部署
 8 Serializable作用：标记该类是可以被序列化的，==对于基本数据类型比较的是值，对于对象比较地址，equals主要看对象的equals和hashcode这两个实现
 9 实现Comparator接口，注意比较器中> = <三种情况均要考虑到
 11 接口幂等设计一般要有唯一标识（如reqId或者seq序列号），插入逻辑一般是先查后插入，数据库根据唯一标识做唯一索引
@@ -12,5 +14,6 @@
     * @ControllerAdvice
     * 实现ErrorController接口
     * 全局AOP
-17 好的源码设计可以让阅读者在编码代码时有更多的灵感，JDK中集合从接口设计，到抽象类，再到不同的实现，比较清晰的展示了多态、继承。再如Spring中，采用的一些优秀的设计模式，对我们日后的编程也有一定的好处。
+17 好的源码设计可以让阅读者在编码代码时有更多的灵感，JDK中集合从接口设计，到抽象类，再到不同的实现，比较清晰的展示了多态、继承。再如Spring中，采用的一
+   些优秀的设计模式，对我们日后的编程也有一定的好处。
 18 采用ELK进行日志采集，接口层面采用AOP打印关键信息（URL，接口名称，入参）；在各层catch异常后一定要把异常打出来，不可catch掉，不打印error log
